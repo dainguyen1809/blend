@@ -52,6 +52,23 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ], [
+            'name.required' => 'Please field your :attribute',
+            'email.required' => 'Please field your :attribute',
+            'password.required' => 'Please field your :attribute',
+
+            'name.max' => 'Only contain 255 characters',
+            'email.max' => 'Only contain 255 characters',
+            'password.max' => 'Only contain 255 characters',
+
+            'name.string' => 'Name must be a string',
+
+            'email.email' => 'Incorrect format email !',
+
+        ], [
+            'name' => 'Name',
+            'email' => 'Email',
+            'password' => 'Password',
         ]);
     }
 
